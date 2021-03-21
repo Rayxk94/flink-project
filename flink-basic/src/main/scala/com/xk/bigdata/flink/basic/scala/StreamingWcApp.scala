@@ -12,7 +12,7 @@ object StreamingWcApp {
 
     val env = StreamExecutionEnvironment.getExecutionEnvironment
 
-    env.socketTextStream("bigdata", 16666)
+    env.socketTextStream("bigdatatest01", 16666)
       .flatMap(_.toLowerCase.split(","))
       .map((_, 1))
       .keyBy(_._1)
